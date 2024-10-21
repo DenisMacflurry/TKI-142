@@ -21,7 +21,7 @@ double getGeometric(const double a, const double b);
 * @brief считывает вещественное число
 * @return возвращает вещественное число
 */
-double Input();
+double input();
 
 /**
 * @brief Точка входа в программу.
