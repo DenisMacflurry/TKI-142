@@ -15,7 +15,7 @@ double getPotentialEnergy(const double x, const double k);
 * @brief считывает вещественное число
 * @return возвращает вещественное число
 */
-double Input(void);
+double input(void);
 
 /**
 * @brief Точка входа в программу.
@@ -23,15 +23,15 @@ double Input(void);
 */
 int main(void) {
     printf("Введите растяжение пружины (мм): ");
-    double x = Input();
+    double x = input();
     printf("Введите коэффициент жесткости: ");
-    double k = Input();
+    double k = input();
     printf("Потенциальная энергия пружины: %.2lf", getPotentialEnergy(x,k));
 
     return 0;
 }
 
-double Input(void) {   
+double input(void) {   
     double value = 0.0; 
     int result = scanf("%lf", &value);
     if (result != 1) {
@@ -43,5 +43,7 @@ double Input(void) {
 }
 
 double getPotentialEnergy(const double x, const double k) {
-    return ((k*(pow(x,2)*pow(10,-6)))/2);
+    const double milliToMeters = 0.001;
+    const double half = 0.5;
+    return (k * (pow(x * milliToMeters,2)) * half);
 }
