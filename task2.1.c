@@ -71,6 +71,7 @@ int main(void) {
         }
         default: {
             printf("Неверно введена операция");
+            break;
         }
     
     }
