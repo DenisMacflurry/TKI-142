@@ -57,7 +57,7 @@ int main(void) {
     printf("Что вы хотите узнать?\n Площадь грани куба - 1 \n Площадь полной поверхности - 2\n Объем куба - 3 \n");
     int operation = inputOperation();
     switch(operation) {
-        case Edge:{
+        case Edge:{ 
             printf("Площадь грани = %lf\n", getEdge(a));
             break;
         }
@@ -69,6 +69,10 @@ int main(void) {
             printf("Объем = %lf\n", getVolume(a));
             break;
         }
+        default: {
+            printf("Неверно введена операция");
+        }
+    
     }
 
     return 0;
