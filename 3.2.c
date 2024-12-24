@@ -1,4 +1,5 @@
 #include "3.2.h"
+
 int main(void) {
     printf("Введите количество элементов последовательности n:\n");
     const int n = pozitive_int();
@@ -60,13 +61,13 @@ double pozitive_double(void)
 
 
 double get_next_term(double a_k, int k) {
-    return a_k * (pow(k + 1.0, 3) / k);
+    return -1 * (a_k * (pow(k + 1.0, 3) / k));
 }
 
 
 double get_sum_first_n(int n) {
     double sum = 0.0;
-    double a_k = 8.0;
+    double a_k = -8.0;
 
     for (int k = 1; k <= n; k++) {
         sum += a_k;
@@ -79,10 +80,10 @@ double get_sum_first_n(int n) {
 
 double get_sum_dependent_e(double e) {
     double sum = 0.0;
-    double a_k = 8.0; 
+    double a_k = -8.0; 
     int k = 1;
 
-    while (a_k >= e) {
+    while (fabs(a_k) >= e + DBL_EPSILON) {
         sum += a_k;
         a_k = get_next_term(a_k, k); 
         k++;
