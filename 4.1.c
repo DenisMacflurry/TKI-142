@@ -1,4 +1,4 @@
-#include "4.h"
+#include "4.1.h"
 
 int main(void) {
     printf("Введите размер массива\n");
@@ -6,7 +6,7 @@ int main(void) {
     int* array = create_array(n);
 
     printf("Выберите метод заполнения массива.\n");
-    printf("0 - ручной ввод, 1 - случайное заполнение\n");
+    printf("%d - ручной ввод, %d - случайное заполнение\n", INPUT, RANDOM);
     int dependent = pozitiv_input();
     switch (dependent) {
         case INPUT:
@@ -22,7 +22,7 @@ int main(void) {
     }
 
     print_array(array, n);
-    
+
     printf("Пожалуйста введите целочисленное положительное число:\n");
     int number = pozitiv_input();
     int sum = sum_even_numbered_elements(array, n, number);
